@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*"],
+  "exclude": ["dist", "node_modules"],
+  "module":"ESNext",
+  "target": "ES2020",
+  "moduleResolution": "node",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "paths": {
+      "@repo/*": ["../*/src", "../../packages/*/src"]
+  }
+}

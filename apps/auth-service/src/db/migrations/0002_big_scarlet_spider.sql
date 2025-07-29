@@ -1,0 +1,1 @@
+ALTER TABLE "refresh_tokens" ADD COLUMN "is_revoked" integer DEFAULT 0 NOT NULL;
