@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { Request, Response } from 'express';
 import express from 'express';
 import cors from 'cors';
@@ -21,10 +22,9 @@ app.get('/health', (_req: Request, res: Response) => {
 });
 
 // Routes
+import authRoutes from './routes/auth.routes';
 
-app.get('/api/auth', (_req: Request, res: Response) => {
-  res.status(200).json({ message: 'Auth Service is running' });
-});
+app.use('/api/auth', authRoutes);
 
 // Server Boot
 const server = http.createServer(app);

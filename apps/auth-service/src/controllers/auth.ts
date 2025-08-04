@@ -9,7 +9,7 @@ import {
 } from '../services/auth';
 import { SelectUser } from '../db/schema';
 import jwt, { SignOptions } from 'jsonwebtoken';
-import { ApiError } from 'shared';
+import { ApiError } from '@repo/shared';
 
 class AuthController {
   async signUp(req: Request, res: Response, next: NextFunction) {
@@ -25,6 +25,7 @@ class AuthController {
         res
           .status(201)
           .json({ message: 'User is created successfully!', data: data });
+        return;
       }
       res.status(400).json({ message: 'Bad request!' });
     } catch (error) {
