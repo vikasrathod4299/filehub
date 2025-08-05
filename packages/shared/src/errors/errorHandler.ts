@@ -10,7 +10,6 @@ export const errorHandler: ErrorRequestHandler = (
   const statusCode = err instanceof ApiError ? err.statusCode : 500;
   const message = err.message || 'Something went wrong';
 
-  console.error('[ERROR]', err);
 
   res.status(statusCode).json({
     success: false,

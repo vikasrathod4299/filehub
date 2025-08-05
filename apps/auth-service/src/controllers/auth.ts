@@ -14,6 +14,7 @@ import { ApiError } from '@repo/shared';
 class AuthController {
   async signUp(req: Request, res: Response, next: NextFunction) {
     try {
+      console.log('signUp called with body:', req.body);
       const salt = await bcryptjs.genSalt(12);
       const hashedPassword = await bcryptjs.hash(req.body.password, salt);
 

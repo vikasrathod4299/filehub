@@ -24,7 +24,7 @@ app.get('/health', (_req: Request, res: Response) => {
 // Routes
 import authRoutes from './routes/auth.routes';
 
-app.use('/api/auth', authRoutes);
+app.use('/auth', authRoutes);
 
 // Server Boot
 const server = http.createServer(app);
